@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface IDocentRepository extends JpaRepository<Docent,Integer> {
 
-    //si tengo consultas personalizadas deben ir en este espacion
+    //si tengo consultas personalizadas deben ir en este espacion hola
 }
