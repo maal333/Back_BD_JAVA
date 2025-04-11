@@ -1,4 +1,4 @@
 package com.example.classroomapi.services;
 
-public class ServiceAssitance {
+public class ServiceAssistance {
 }
