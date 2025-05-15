@@ -28,10 +28,16 @@ public class Course {
 
 
     //creando relacion  (1 curso  a muchas asistencias)
-    @OneToMany(mappedBy = "asistencia")
+    @OneToMany(mappedBy = "curso")  // Debe coincidir con el nombre del campo en Assistance
     @JsonManagedReference ("curso_asistencia")
-    private List<Assistance>asistencia;
+    private List<Assistance> asistencia;
 
+
+
+    //relacion de 1 curso a muchas materias
+    @OneToMany(mappedBy = "curso")  // Debe coincidir con el nombre del campo en Subject
+    @JsonManagedReference("curso_materia")
+    private List<Subject> materias;
 
 
     public Course() {

@@ -32,9 +32,15 @@ public class Student {
 
 
     // creando relacion de one(estudiante) a  many(asistencia)
-    @OneToMany (mappedBy = "asistencia")
+    @OneToMany(mappedBy = "estudiante")  // Debe coincidir con el nombre del campo en Assistance
     @JsonManagedReference ("asistencia_estudiante")
-    private List<Assistance>asistencia;
+    private List<Assistance> asistencia;
+
+    // creando relacion (1 estudiante a muchas inscripciones)
+    @OneToMany(mappedBy = "estudiante")
+    @JsonManagedReference("estudiante_inscripcion")
+    private List<Registration> inscripciones;
+
 
 
     public Student() {

@@ -1,6 +1,7 @@
 package com.example.classroomapi.models;
 //Inscripción
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import java.sql.Timestamp;
 @Entity
@@ -14,6 +15,13 @@ public class Registration {
 
     @Column (name = "fecha_inscripcion")
     private Timestamp registration_date;
+
+    // creando relacion (muchas inscripciones a 1 estudiante)
+    @ManyToOne
+    @JoinColumn(name = "id_estudiante", referencedColumnName = "id_estudiante")
+    @JsonBackReference("estudiante_inscripcion")
+    private Student estudiante;
+
 
     public Registration() {
     }
